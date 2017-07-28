@@ -38,8 +38,7 @@ public:
     //   and the associated ordinal corresponding to the cube's
     //   "home" configuration.  The home ordinals correspond to
     //   the root node of the search.
-    PruningTable(MoveTable& moveTable1, MoveTable& moveTable2,
-                 int homeOrdinal1, int homeOrdinal2);
+    PruningTable(MoveTable& moveTable1, MoveTable& moveTable2, int homeOrdinal1, int homeOrdinal2);
     
     ~PruningTable();
     
@@ -49,7 +48,7 @@ public:
     
     // Convert a pruning table index to the associated pair
     //   of move mapping table indices
-    void PruningTableIndexToMoveTableIndices(int index, int& ordinal1, int& ordinal2);
+    void PruningTableIndexToMoveTableIndices(int index, int &ordinal1, int &ordinal2);
     
     // Convert a pair of move mapping table indices to the
     //   associated pruning table index

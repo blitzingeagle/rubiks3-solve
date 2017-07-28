@@ -79,16 +79,12 @@ public:
         NumberOfMoves = LastMove+1
     };
     
-    // Default constructor
+    // Constructor/Destructor
     Cube();
-    
-    // Destructor
     virtual ~Cube();
     
-    // Overloaded equality test operator
+    // Overloaded operators
     bool operator==(const Cube &cube);
-    
-    // Overloaded inequality test operator
     bool operator!=(const Cube &cube);
     
     // Reset cube back to HOME position

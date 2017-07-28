@@ -203,7 +203,7 @@ int Solver::Search1(int twist, int flip, int choice, int depth)
                 choice2 = choiceMoveTable[choice2][move];
                 nodes1++;
                 // Apply the move
-                if (result = Search1(twist2, flip2, choice2, depth+1))
+                if((result = Search1(twist2, flip2, choice2, depth+1)))
                     return result;
             }
         }
@@ -251,12 +251,7 @@ int Solver::Solve2(RubiksCube& cube)
     return result;
 }
 
-int Solver::Search2(
-                    int cornerPermutation,
-                    int nonMiddleSliceEdgePermutation,
-                    int middleSliceEdgePermutation,
-                    int depth)
-{
+int Solver::Search2(int cornerPermutation, int nonMiddleSliceEdgePermutation, int middleSliceEdgePermutation, int depth) {
     int cost, totalCost;
     int move;
     int power, powerLimit;
@@ -266,13 +261,9 @@ int Solver::Search2(
     int result;
     
     // Compute cost estimate to goal state
-    cost = Phase2Cost(
-                      cornerPermutation,
-                      nonMiddleSliceEdgePermutation,
-                      middleSliceEdgePermutation);	// h
+    cost = Phase2Cost(cornerPermutation, nonMiddleSliceEdgePermutation, middleSliceEdgePermutation);	// h
     
-    if (cost == 0)	// Solution found...
-    {
+    if (cost == 0) {	// Solution found...
         solutionLength2 = depth;	// Save phase 2 solution length
         if (solutionLength1 + solutionLength2 < minSolutionLength)
             minSolutionLength = solutionLength1 + solutionLength2;
@@ -283,14 +274,12 @@ int Solver::Search2(
     // See if node should be expanded
     totalCost = depth + cost;	// g + h
     
-    if (totalCost <= threshold2)	// Expand node
-    {
+    if (totalCost <= threshold2) {	// Expand node
         // No point in continuing to search for solutions of equal or greater
         //   length than the current best solution
         if (solutionLength1 + depth >= minSolutionLength-1) return ABORT;
         
-        for (move = Cube::Move::R; move <= Cube::Move::B; move++)
-        {
+        for (move = Cube::Move::R; move <= Cube::Move::B; move++) {
             if (Disallowed(move, solutionMoves2, depth)) continue;
             
             cornerPermutation2 = cornerPermutation;
@@ -301,8 +290,7 @@ int Solver::Search2(
             powerLimit = 4;
             if (move != Cube::Move::U && move != Cube::Move::D) powerLimit=2;
             
-            for (power = 1; power < powerLimit; power++)
-            {
+            for (power = 1; power < powerLimit; power++) {
                 cornerPermutation2 =
                 cornerPermutationMoveTable[cornerPermutation2][move];
                 nonMiddleSliceEdgePermutation2 =
@@ -314,24 +302,18 @@ int Solver::Search2(
                 
                 nodes2++;
                 // Apply the move
-                if (result = Search2(
-                                     cornerPermutation2,
-                                     nonMiddleSliceEdgePermutation2,
-                                     middleSliceEdgePermutation2, depth+1))
+                if((result = Search2(cornerPermutation2, nonMiddleSliceEdgePermutation2, middleSliceEdgePermutation2, depth+1)))
                     return result;
             }
         }
-    }
-    else	// Maintain minimum cost exceeding threshold
-    {
+    } else {	// Maintain minimum cost exceeding threshold
         if (totalCost < newThreshold2)
             newThreshold2 = totalCost;
     }
     return NOT_FOUND;
 }
 
-int Solver::Phase1Cost(int twist, int flip, int choice)
-{
+int Solver::Phase1Cost(int twist, int flip, int choice) {
     // Combining admissible heuristics by taking their maximum
     //   produces an improved admissible heuristic.
     int cost = TwistAndFlipPruningTable.GetValue(twist*flipMoveTable.SizeOf()+flip);
@@ -342,41 +324,33 @@ int Solver::Phase1Cost(int twist, int flip, int choice)
     return cost;
 }
 
-int Solver::Phase2Cost(
-                       int cornerPermutation,
-                       int nonMiddleSliceEdgePermutation,
-                       int middleSliceEdgePermutation)
-{
+int Solver::Phase2Cost(int cornerPermutation, int nonMiddleSliceEdgePermutation, int middleSliceEdgePermutation) {
     // Combining admissible heuristics by taking their maximum
     //   produces an improved admissible heuristic.
-    int cost = CornerAndSlicePruningTable.GetValue(
-                                                   cornerPermutation*middleSliceEdgePermutationMoveTable.SizeOf()+middleSliceEdgePermutation);
-    int cost2 = EdgeAndSlicePruningTable.GetValue(
-                                                  nonMiddleSliceEdgePermutation*middleSliceEdgePermutationMoveTable.SizeOf()+middleSliceEdgePermutation);
+    int cost = CornerAndSlicePruningTable.GetValue(cornerPermutation*middleSliceEdgePermutationMoveTable.SizeOf()+middleSliceEdgePermutation);
+    int cost2 = EdgeAndSlicePruningTable.GetValue(nonMiddleSliceEdgePermutation*middleSliceEdgePermutationMoveTable.SizeOf()+middleSliceEdgePermutation);
     if (cost2 > cost) cost = cost2;
     return cost;
 }
 
-int Solver::Disallowed(int move, int* solutionMoves, int depth)
-{
-    if (depth > 0)
-    {
+int Solver::Disallowed(int move, int *solutionMoves, int depth) {
+    if (depth > 0) {
         // Disallow successive moves of a single face (RR2 is same as R')
         if (solutionMoves[depth-1] == move)
             return 1;
         
         //   Disallow a move of an opposite face if the current face
         //     moved is B,L, or D. (BF, LR, DU are same as FB,RL,UD)
-        if ((move == Cube::Move::F) && solutionMoves[depth-1] == Cube::Move::B)
+        if((move == Cube::Move::F) && solutionMoves[depth-1] == Cube::Move::B)
             return 1;
-        if ((move == Cube::Move::R) && solutionMoves[depth-1] == Cube::Move::L)
+        if((move == Cube::Move::R) && solutionMoves[depth-1] == Cube::Move::L)
             return 1;
-        if ((move == Cube::Move::U) && solutionMoves[depth-1] == Cube::Move::D)
+        if((move == Cube::Move::U) && solutionMoves[depth-1] == Cube::Move::D)
             return 1;
         
         // Disallow 3 or more consecutive moves of opposite faces
         //   (UDU is same as DU2 and U2D)
-        if ((depth > 1) && solutionMoves[depth-2] == move &&
+        if((depth > 1) && solutionMoves[depth-2] == move &&
             solutionMoves[depth-1] == Cube::OpposingFace(move))
             return 1;
     }
@@ -386,7 +360,7 @@ int Solver::Disallowed(int move, int* solutionMoves, int depth)
 void Solver::PrintSolution(void) {
     for(int i = 0; i < solutionLength1; i++)
         cout << Cube::NameOfMove(TranslateMove(solutionMoves1[i], solutionPowers1[i], 0)) << " ";
-    cout << ". ";
+    cout << ". "; // Separates phase1 and phase2 portion of the solution
     for(int i = 0; i < solutionLength2; i++)
         cout << Cube::NameOfMove(TranslateMove(solutionMoves2[i], solutionPowers2[i], 1)) << " ";
     cout << "(" << solutionLength1 + solutionLength2 << ")" << endl;

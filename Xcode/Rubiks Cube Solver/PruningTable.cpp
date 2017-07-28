@@ -13,13 +13,8 @@
 
 using namespace std;
 
-PruningTable::PruningTable(MoveTable& moveTable1, MoveTable& moveTable2,
-                           int homeOrdinal1, int homeOrdinal2)
-: MoveTable1(moveTable1),
-MoveTable2(moveTable2),
-HomeOrdinal1(homeOrdinal1),
-HomeOrdinal2(homeOrdinal2)
-{
+PruningTable::PruningTable(MoveTable& moveTable1, MoveTable& moveTable2, int homeOrdinal1, int homeOrdinal2)
+: MoveTable1(moveTable1), MoveTable2(moveTable2), HomeOrdinal1(homeOrdinal1), HomeOrdinal2(homeOrdinal2) {
     // Initialize table sizes
     MoveTable1Size = MoveTable1.SizeOf();
     MoveTable2Size = MoveTable2.SizeOf();
@@ -36,35 +31,29 @@ HomeOrdinal2(homeOrdinal2)
     Table = new unsigned char[AllocationSize];
 }
 
-void PruningTable::Initialize(char* fileName)
-{
+void PruningTable::Initialize(char* fileName) {
     ifstream infile(fileName, ios::in|ios::binary);
-    if (!infile)	// If the pruning table file is absent...
-    {
+    if (!infile) {	// If the pruning table file is absent...
         // Generate the table and save it to a file
         cout << "Generating" << endl;
         Generate();
         cout << "Saving" << endl;
         Save(fileName);
         cout << "Done Saving" << endl;
-    }
-    else		// The pruning table files exists
-    {
+    } else {		// The pruning table files exists
         // Load the existing file
         cout << "Loading" << endl;
         Load(infile);
     }
 }
 
-PruningTable::~PruningTable()
-{
+PruningTable::~PruningTable() {
     // Deallocate table storage
     delete [] Table;
 }
 
 // Performs a breadth first search to fill the pruning table
-void PruningTable::Generate(void)
-{
+void PruningTable::Generate() {
     unsigned int depth = 0; // Current search depth
     int numberOfNodes;		// Number of nodes generated
     int ordinal1, ordinal2; // Table coordinates
@@ -83,22 +72,17 @@ void PruningTable::Generate(void)
     numberOfNodes = 1;	// Count root node here
     
     // While empty table entries exist...
-    while (numberOfNodes < TableSize)
-    {
+    while (numberOfNodes < TableSize) {
         // Scan all entries looking for entries
         //   corresponding to the current depth
-        for (index = 0; index < TableSize; index++)
-        {
+        for (index = 0; index < TableSize; index++) {
             // Expand the nodes at the current depth only
-            if (GetValue(index) == depth)
-            {
+            if (GetValue(index) == depth) {
                 // Apply each possible move
-                for (move = Cube::Move::R; move <= Cube::Move::B; move++)
-                {
+                for (move = Cube::Move::R; move <= Cube::Move::B; move++) {
                     PruningTableIndexToMoveTableIndices(index, ordinal1, ordinal2);
                     // Apply each of the three quarter turns
-                    for (power = 1; power < 4; power++)
-                    {
+                    for (power = 1; power < 4; power++) {
                         // Use the move mapping table to find the child node
                         ordinal1 = MoveTable1[ordinal1][move];
                         ordinal2 = MoveTable2[ordinal2][move];
@@ -106,8 +90,7 @@ void PruningTable::Generate(void)
                                                                      ordinal1, ordinal2);
                         
                         // Update previously unexplored nodes only
-                        if (GetValue(index2) == Empty)
-                        {
+                        if (GetValue(index2) == Empty) {
                             SetValue(index2, depth+1);
                             numberOfNodes++;
                         }
@@ -123,37 +106,33 @@ void PruningTable::Generate(void)
     }
 }
 
-void PruningTable::PruningTableIndexToMoveTableIndices(
-                                                       int index, int& ordinal1, int& ordinal2)
-{
+void PruningTable::PruningTableIndexToMoveTableIndices(int index, int& ordinal1, int& ordinal2) {
     // Split the pruning table index
     ordinal1 = index/MoveTable2Size;
     ordinal2 = index%MoveTable2Size;
     return;
 }
 
-int PruningTable::MoveTableIndicesToPruningTableIndex(
-                                                      int ordinal1, int ordinal2)
-{
+int PruningTable::MoveTableIndicesToPruningTableIndex(int ordinal1, int ordinal2) {
     // Combine move table indices
     return ordinal1*MoveTable2Size+ordinal2;
 }
 
 unsigned int PruningTable::OffsetToEntryMask[2] = {
-    Empty<<0,  Empty<<4 };
+    Empty<<0,  Empty<<4
+};
 
 unsigned int PruningTable::OffsetToShiftCount[2] = {
-    0, 4 };
+    0, 4
+};
 
-unsigned int PruningTable::GetValue(int index)
-{
+unsigned int PruningTable::GetValue(int index) {
     // Retrieve the proper nybble
     int offset = index%2;
     return (Table[index/2]&OffsetToEntryMask[offset])>>OffsetToShiftCount[offset];
 }
 
-void PruningTable::SetValue(int index, unsigned int value)
-{
+void PruningTable::SetValue(int index, unsigned int value) {
     // Set the proper nybble
     int i = index/2;
     int offset = index%2;
@@ -161,24 +140,19 @@ void PruningTable::SetValue(int index, unsigned int value)
     (value<<OffsetToShiftCount[offset]);
 }
 
-void PruningTable::Save(char* fileName)
-{
+void PruningTable::Save(char* fileName) {
     ofstream outfile(fileName, ios::out|ios::binary);
     outfile.write((const char *)Table, AllocationSize);
 }
 
-void PruningTable::Load(ifstream& infile)
-{
+void PruningTable::Load(ifstream& infile) {
     infile.read((char *)Table, AllocationSize);
 }
 
 // Output the pruning table in human readable form
-void PruningTable::Dump(void)
-{
+void PruningTable::Dump() {
     int index;
-    for (index = 0; index < TableSize; index++)
-    {
-        cout << setw(7) << index << ": "
-        << setw(2) << GetValue(index) << endl;
+    for (index = 0; index < TableSize; index++) {
+        cout << setw(7) << index << ": " << setw(2) << GetValue(index) << endl;
     }
 }

@@ -113,14 +113,13 @@ int PermutationToOrdinal(int *vector, int n) {
 // produce the coefficients that drive the exchanges.
 //
 void OrdinalToPermutation(int Ordinal, int* vector, int n, int offset) {
-    int i;
     int Coeff_i;
     int Temp;
     // Construct an inital permutation
-    for (i = 0; i < n; i++)
+    for(int i = 0; i < n; i++)
         vector[i] = i+offset;
     
-    for (i = 1; i < n; i++) {
+    for(int i = 1; i < n; i++) {
         // Compute the coefficent
         Coeff_i   = Ordinal % (i+1);
         // Divide out current "factorial number base"

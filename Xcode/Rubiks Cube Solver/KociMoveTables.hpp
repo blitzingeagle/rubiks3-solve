@@ -21,8 +21,7 @@
 
 // Phase 1 move mapping table classes
 
-class TwistMoveTable : public MoveTable
-{
+class TwistMoveTable : public MoveTable {
 public:
     TwistMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::Twists, 0),

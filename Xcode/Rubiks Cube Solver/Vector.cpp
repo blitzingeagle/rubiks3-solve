@@ -22,8 +22,7 @@ void CopyVector(int *fromVector, int *toVector, int n) {
 
 // PrintVector - Print the contents of the vector
 void PrintVector(int *vector, int n) {
-    int i;
-    for(i = 0; i < n; i++)
+    for(int i = 0; i < n; i++)
         cout << vector[i] << " ";
     cout << endl;
 }

@@ -23,7 +23,7 @@ public:
     //   or not the table is a phase 2 table.  If the
     //   table is a phase 2 table, then only quarter
     //   turn moves are allowed for F,B,L, and R.
-    MoveTable(Cube& cube, int tableSize, int phase2=0);
+    MoveTable(Cube &cube, int tableSize, int phase2=0);
     
     virtual ~MoveTable();
     
@@ -36,21 +36,21 @@ public:
     virtual int* operator[](int index);
     
     // Obtain the size of the table (number of logical entries)
-    virtual int SizeOf(void) { return TableSize; }
+    virtual int SizeOf() { return TableSize; }
     
     // Dump table contents
-    virtual void Dump(void);
+    virtual void Dump();
     
 protected:
     // These functions must be overloaded in the derived
     //   class in order to provide the appropriate mapping
     //   between ordinal and cube state.
-    virtual int OrdinalFromCubeState(void) = 0;
+    virtual int OrdinalFromCubeState() = 0;
     virtual void OrdinalToCubeState(int ordinal) = 0;
     
 private:
     // Generate the table
-    void Generate(void);
+    void Generate();
     // Save the table to a file
     void Save(char* fileName);
     // Load the table from a file
