@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A535C73A1F2971020074B3B5 /* FaceletCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C7381F2971020074B3B5 /* FaceletCube.cpp */; };
+		A535C73D1F2971470074B3B5 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C73B1F2971470074B3B5 /* Cube.cpp */; };
+		A535C7401F2974C20074B3B5 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C73E1F2974C20074B3B5 /* Vector.cpp */; };
+		A535C7431F298DF40074B3B5 /* CubeParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C7411F298DF40074B3B5 /* CubeParser.cpp */; };
+		A535C7461F2991BF0074B3B5 /* RubiksCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C7441F2991BF0074B3B5 /* RubiksCube.cpp */; };
+		A535C7491F29A4710074B3B5 /* Combinatorics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C7471F29A4710074B3B5 /* Combinatorics.cpp */; };
+		A535C74D1F29A7B20074B3B5 /* Solver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C74B1F29A7B20074B3B5 /* Solver.cpp */; };
+		A535C7511F29AC8A0074B3B5 /* MoveTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C74F1F29AC8A0074B3B5 /* MoveTable.cpp */; };
+		A535C7541F29B0350074B3B5 /* PruningTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A535C7521F29B0350074B3B5 /* PruningTable.cpp */; };
+		A540A5491F28E4FE0061655C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A540A5481F28E4FE0061655C /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A540A5431F28E4FE0061655C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A535C7381F2971020074B3B5 /* FaceletCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FaceletCube.cpp; sourceTree = "<group>"; };
+		A535C7391F2971020074B3B5 /* FaceletCube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FaceletCube.hpp; sourceTree = "<group>"; };
+		A535C73B1F2971470074B3B5 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		A535C73C1F2971470074B3B5 /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cube.hpp; sourceTree = "<group>"; };
+		A535C73E1F2974C20074B3B5 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		A535C73F1F2974C20074B3B5 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
+		A535C7411F298DF40074B3B5 /* CubeParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeParser.cpp; sourceTree = "<group>"; };
+		A535C7421F298DF40074B3B5 /* CubeParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeParser.hpp; sourceTree = "<group>"; };
+		A535C7441F2991BF0074B3B5 /* RubiksCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RubiksCube.cpp; sourceTree = "<group>"; };
+		A535C7451F2991BF0074B3B5 /* RubiksCube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RubiksCube.hpp; sourceTree = "<group>"; };
+		A535C7471F29A4710074B3B5 /* Combinatorics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Combinatorics.cpp; sourceTree = "<group>"; };
+		A535C7481F29A4710074B3B5 /* Combinatorics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Combinatorics.hpp; sourceTree = "<group>"; };
+		A535C74B1F29A7B20074B3B5 /* Solver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solver.cpp; sourceTree = "<group>"; };
+		A535C74C1F29A7B20074B3B5 /* Solver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Solver.hpp; sourceTree = "<group>"; };
+		A535C74E1F29AB6D0074B3B5 /* KociMoveTables.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KociMoveTables.hpp; sourceTree = "<group>"; };
+		A535C74F1F29AC8A0074B3B5 /* MoveTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveTable.cpp; sourceTree = "<group>"; };
+		A535C7501F29AC8A0074B3B5 /* MoveTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MoveTable.hpp; sourceTree = "<group>"; };
+		A535C7521F29B0350074B3B5 /* PruningTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PruningTable.cpp; sourceTree = "<group>"; };
+		A535C7531F29B0350074B3B5 /* PruningTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PruningTable.hpp; sourceTree = "<group>"; };
+		A540A5451F28E4FE0061655C /* Rubiks Cube Solver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rubiks Cube Solver"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A540A5481F28E4FE0061655C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A5BC02121F2AEFC000D9A2C4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A540A5421F28E4FE0061655C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A535C74A1F29A6970074B3B5 /* Cube Representation */ = {
+			isa = PBXGroup;
+			children = (
+				A535C73C1F2971470074B3B5 /* Cube.hpp */,
+				A535C73B1F2971470074B3B5 /* Cube.cpp */,
+				A535C7451F2991BF0074B3B5 /* RubiksCube.hpp */,
+				A535C7441F2991BF0074B3B5 /* RubiksCube.cpp */,
+				A535C7391F2971020074B3B5 /* FaceletCube.hpp */,
+				A535C7381F2971020074B3B5 /* FaceletCube.cpp */,
+			);
+			name = "Cube Representation";
+			sourceTree = "<group>";
+		};
+		A535C7551F29B4440074B3B5 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				A535C74E1F29AB6D0074B3B5 /* KociMoveTables.hpp */,
+				A535C7501F29AC8A0074B3B5 /* MoveTable.hpp */,
+				A535C74F1F29AC8A0074B3B5 /* MoveTable.cpp */,
+				A535C7531F29B0350074B3B5 /* PruningTable.hpp */,
+				A535C7521F29B0350074B3B5 /* PruningTable.cpp */,
+			);
+			name = Tables;
+			sourceTree = "<group>";
+		};
+		A540A53C1F28E4FE0061655C = {
+			isa = PBXGroup;
+			children = (
+				A5BC02121F2AEFC000D9A2C4 /* .gitignore */,
+				A540A5471F28E4FE0061655C /* Rubiks Cube Solver */,
+				A540A5461F28E4FE0061655C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A540A5461F28E4FE0061655C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A540A5451F28E4FE0061655C /* Rubiks Cube Solver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A540A5471F28E4FE0061655C /* Rubiks Cube Solver */ = {
+			isa = PBXGroup;
+			children = (
+				A535C74A1F29A6970074B3B5 /* Cube Representation */,
+				A535C7551F29B4440074B3B5 /* Tables */,
+				A535C7481F29A4710074B3B5 /* Combinatorics.hpp */,
+				A535C7471F29A4710074B3B5 /* Combinatorics.cpp */,
+				A535C7421F298DF40074B3B5 /* CubeParser.hpp */,
+				A535C7411F298DF40074B3B5 /* CubeParser.cpp */,
+				A535C73F1F2974C20074B3B5 /* Vector.hpp */,
+				A535C73E1F2974C20074B3B5 /* Vector.cpp */,
+				A535C74C1F29A7B20074B3B5 /* Solver.hpp */,
+				A535C74B1F29A7B20074B3B5 /* Solver.cpp */,
+				A540A5481F28E4FE0061655C /* main.cpp */,
+			);
+			path = "Rubiks Cube Solver";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A540A5441F28E4FE0061655C /* Rubiks Cube Solver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A540A54C1F28E4FE0061655C /* Build configuration list for PBXNativeTarget "Rubiks Cube Solver" */;
+			buildPhases = (
+				A540A5411F28E4FE0061655C /* Sources */,
+				A540A5421F28E4FE0061655C /* Frameworks */,
+				A540A5431F28E4FE0061655C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rubiks Cube Solver";
+			productName = "Rubiks Cube Solver";
+			productReference = A540A5451F28E4FE0061655C /* Rubiks Cube Solver */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A540A53D1F28E4FE0061655C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Morris Chen";
+				TargetAttributes = {
+					A540A5441F28E4FE0061655C = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = JC5UA2XZJW;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A540A5401F28E4FE0061655C /* Build configuration list for PBXProject "Rubiks Cube Solver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A540A53C1F28E4FE0061655C;
+			productRefGroup = A540A5461F28E4FE0061655C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A540A5441F28E4FE0061655C /* Rubiks Cube Solver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A540A5411F28E4FE0061655C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A535C7461F2991BF0074B3B5 /* RubiksCube.cpp in Sources */,
+				A535C7491F29A4710074B3B5 /* Combinatorics.cpp in Sources */,
+				A535C73D1F2971470074B3B5 /* Cube.cpp in Sources */,
+				A540A5491F28E4FE0061655C /* main.cpp in Sources */,
+				A535C7401F2974C20074B3B5 /* Vector.cpp in Sources */,
+				A535C7511F29AC8A0074B3B5 /* MoveTable.cpp in Sources */,
+				A535C73A1F2971020074B3B5 /* FaceletCube.cpp in Sources */,
+				A535C74D1F29A7B20074B3B5 /* Solver.cpp in Sources */,
+				A535C7541F29B0350074B3B5 /* PruningTable.cpp in Sources */,
+				A535C7431F298DF40074B3B5 /* CubeParser.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A540A54A1F28E4FE0061655C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A540A54B1F28E4FE0061655C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A540A54D1F28E4FE0061655C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = JC5UA2XZJW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A540A54E1F28E4FE0061655C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = JC5UA2XZJW;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A540A5401F28E4FE0061655C /* Build configuration list for PBXProject "Rubiks Cube Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A540A54A1F28E4FE0061655C /* Debug */,
+				A540A54B1F28E4FE0061655C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A540A54C1F28E4FE0061655C /* Build configuration list for PBXNativeTarget "Rubiks Cube Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A540A54D1F28E4FE0061655C /* Debug */,
+				A540A54E1F28E4FE0061655C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A540A53D1F28E4FE0061655C /* Project object */;
+}
