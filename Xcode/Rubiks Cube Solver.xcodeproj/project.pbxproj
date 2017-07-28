@@ -53,7 +53,6 @@
 		A535C7531F29B0350074B3B5 /* PruningTable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PruningTable.hpp; sourceTree = "<group>"; };
 		A540A5451F28E4FE0061655C /* Rubiks Cube Solver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Rubiks Cube Solver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A540A5481F28E4FE0061655C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A5BC02121F2AEFC000D9A2C4 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +94,6 @@
 		A540A53C1F28E4FE0061655C = {
 			isa = PBXGroup;
 			children = (
-				A5BC02121F2AEFC000D9A2C4 /* .gitignore */,
 				A540A5471F28E4FE0061655C /* Rubiks Cube Solver */,
 				A540A5461F28E4FE0061655C /* Products */,
 			);
