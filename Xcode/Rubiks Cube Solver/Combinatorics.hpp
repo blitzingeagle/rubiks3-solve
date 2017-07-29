@@ -11,7 +11,7 @@
 
 // Combinatorial algorithms
 
-int NChooseM(int N, int M);
+int nCr(int n, int r);
 int PermutationToOrdinal(int *vector, int n);
 void OrdinalToPermutation(int Ordinal, int* vector, int n, int offset);
 

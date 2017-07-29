@@ -11,6 +11,8 @@
 
 #include "Cube.hpp"
 
+#include <cmath>
+
 #define KOCIEMBA	// Selects either Kociemba's or Winter's approach
                     //   to the choice algorithm (comment out to choose
                     //   the latter).  If this is changed, be sure to
@@ -19,14 +21,12 @@
 class RubiksCube : public Cube {
 public:
     // Number of possiblities for each axis of the two triples
-    enum {
-        Twists = (3*3*3*3*3*3*3), // 3^7 = 2187
-        Flips = (2*2*2*2*2*2*2*2*2*2*2), // 2^11 = 2048
-        Choices = 495, // 12 choose 4 = 495
-        CornerPermutations = (8*7*6*5*4*3*2*1), // 8! = 40320
-        NonMiddleSliceEdgePermutations = (8*7*6*5*4*3*2*1), // 8! = 40320
-        MiddleSliceEdgePermutations = (4*3*2*1) // 4! = 24
-    };
+    static const int Twists;
+    static const int Flips;
+    static const int Choices;
+    static const int CornerPermutations;
+    static const int NonMiddleSliceEdgePermutations;
+    static const int MiddleSliceEdgePermutations;
     
     RubiksCube();
     ~RubiksCube();

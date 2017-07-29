@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     unsigned int status;
     
     string faceletStrings[6] = {
-        "U:RWGGWRWWW", "D:YBGGYYBOW", "F:RRROBYRWW", "B:OOYOGROYY", "L:GWBGOBOYB", "R:GBYRRGOBB"
+        "U:YYYYYYYYY", "D:WWWWWWWWW", "F:GRBRRRRRR", "B:OOOOOOOOO", "L:BGRBBBBBB", "R:RBGGGGGGG"
     };
     
     // Parse the input and initialize FaceletCube

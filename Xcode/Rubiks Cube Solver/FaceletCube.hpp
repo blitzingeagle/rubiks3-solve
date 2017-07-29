@@ -46,7 +46,8 @@ public:
         INVALID_EDGE_MARKINGS,
         INVALID_EDGE_PARITY,
         INVALID_TOTAL_PARITY,
-        NumberOfErrors };
+        NumberOfErrors
+    };
     
     FaceletCube();
     ~FaceletCube();

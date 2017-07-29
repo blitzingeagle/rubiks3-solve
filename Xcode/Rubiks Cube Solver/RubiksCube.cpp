@@ -10,6 +10,13 @@
 
 #include "Combinatorics.hpp"
 
+const int RubiksCube::Twists = (int) pow(3, 7); // 3^7
+const int RubiksCube::Flips = (int) pow(2, 11); // 2^11
+const int RubiksCube::Choices = nCr(12, 4); // 12C4
+const int RubiksCube::CornerPermutations = 40320; // 8!
+const int RubiksCube::NonMiddleSliceEdgePermutations = 40320; // 8!
+const int RubiksCube::MiddleSliceEdgePermutations = 24; // 4!
+
 // Default constructor
 RubiksCube::RubiksCube() {
     // Initialize the choice lookup tables (Dik Winter's method)
@@ -211,7 +218,7 @@ int RubiksCube::ChoiceOrdinal(int* choicePermutation) {
             edgesRemaining--;	// One less edge to go
         else
             // Skip this many permutations
-            ordinal += NChooseM(12-edge, edgesRemaining-1);
+            ordinal += nCr(12-edge, edgesRemaining-1);
     }
     return ordinal;
 }
@@ -241,7 +248,7 @@ void RubiksCube::ChoicePermutation(int choiceOrdinal, int* choicePermutation) {
             //    3 unassigned "digits")
             // N decreases each time we advance the "digit"
             // M decreases each time we move one "digit" to the right
-            combinations=NChooseM(12-1-digit++, 4-1-edge);
+            combinations=nCr(12-1-digit++, 4-1-edge);
             if (choiceOrdinal >= combinations)
                 choiceOrdinal -= combinations;
             else

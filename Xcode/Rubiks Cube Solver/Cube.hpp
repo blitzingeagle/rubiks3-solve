@@ -10,6 +10,7 @@
 #define Cube_hpp
 
 #define NUM_FACES 6
+#define NUM_EDGE 3
 
 #include <string>
 

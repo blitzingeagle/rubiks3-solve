@@ -37,17 +37,17 @@
 //   Note, the performance of this function could be improved by
 //   using a table of precomputed results (i.e. NChooseM[N][M]).
 //
-int NChooseM(int N, int M) {
-    int NoverMfact = N;	// Iterates from N down to M+1 to
+int nCr(int n, int r) {
+    int NoverRfact = n;	// Iterates from N down to M+1 to
 				//   compute N! / (N-M)!
-    int Mfact = 1;		// Iterates from 1 to M to divide
+    int Rfact = 1;		// Iterates from 1 to M to divide
 				//   out the M! term
     int Result = 1;		// Holds the result of N choose M
-    if (N < M) return 0;	// M must be a subset of M
-    if (M > N/2) M = N-M;	// Optimization
-    while (NoverMfact > M) {
-        Result *= NoverMfact--;	// Work on the N! / (N-M)! part
-        Result /= Mfact++;	// Divide out the M! part
+    if (n < r) return 0;	// M must be a subset of M
+    if (r > n/2) r = n-r;	// Optimization
+    while (NoverRfact > r) {
+        Result *= NoverRfact--;	// Work on the N! / (N-M)! part
+        Result /= Rfact++;	// Divide out the M! part
     }
     return Result;
 }
@@ -79,7 +79,7 @@ int PermutationToOrdinal(int *vector, int n) {
     int Vector[12];		// Limits n <= 12
     int Limit;
     int i;
-    int Coeff_i;
+    int Coeff_i = 0;
     int Temp;
     
     // Make a copy of the permutation vector

@@ -24,8 +24,7 @@
 class TwistMoveTable : public MoveTable {
 public:
     TwistMoveTable(RubiksCube& cube)
-    : MoveTable(cube, RubiksCube::Twists, 0),
-		  TheCube(cube) {}
+    : MoveTable(cube, RubiksCube::Twists, 0), TheCube(cube) {}
 private:
     inline int  OrdinalFromCubeState(void)
     { return TheCube.Twist(); }
@@ -34,8 +33,7 @@ private:
     RubiksCube& TheCube;
 };
 
-class FlipMoveTable : public MoveTable
-{
+class FlipMoveTable : public MoveTable {
 public:
     FlipMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::Flips, 0),
@@ -48,8 +46,7 @@ private:
     RubiksCube& TheCube;
 };
 
-class ChoiceMoveTable : public MoveTable
-{
+class ChoiceMoveTable : public MoveTable {
 public:
     ChoiceMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::Choices, 0),
@@ -64,8 +61,7 @@ private:
 
 // Phase 2 move mapping table classes
 
-class CornerPermutationMoveTable : public MoveTable
-{
+class CornerPermutationMoveTable : public MoveTable {
 public:
     CornerPermutationMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::CornerPermutations, 1),
@@ -78,8 +74,7 @@ private:
     RubiksCube& TheCube;
 };
 
-class NonMiddleSliceEdgePermutationMoveTable : public MoveTable
-{
+class NonMiddleSliceEdgePermutationMoveTable : public MoveTable {
 public:
     NonMiddleSliceEdgePermutationMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::NonMiddleSliceEdgePermutations, 1),
@@ -92,8 +87,7 @@ private:
     RubiksCube& TheCube;
 };
 
-class MiddleSliceEdgePermutationMoveTable : public MoveTable
-{
+class MiddleSliceEdgePermutationMoveTable : public MoveTable {
 public:
     MiddleSliceEdgePermutationMoveTable(RubiksCube& cube)
     : MoveTable(cube, RubiksCube::MiddleSliceEdgePermutations, 1),
